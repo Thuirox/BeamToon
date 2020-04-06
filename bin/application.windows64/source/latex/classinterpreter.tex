@@ -1,0 +1,331 @@
+\hypertarget{classinterpreter}{}\doxysection{interpreter Class Reference}
+\label{classinterpreter}\index{interpreter@{interpreter}}
+Inheritance diagram for interpreter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classinterpreter}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Animation}
+\item 
+class {\bfseries Animation\+Float}
+\item 
+class {\bfseries Animation\+List\+Float}
+\item 
+class {\bfseries Attribute}
+\item 
+class {\bfseries Attribute\+Float}
+\item 
+class {\bfseries Click\+Action}
+\item 
+class {\bfseries Color}
+\item 
+class {\bfseries Drawable}
+\item 
+class {\bfseries Go\+To}
+\item 
+class {\bfseries Point}
+\item 
+class {\bfseries Rectangle}
+\item 
+class {\bfseries Shape}
+\item 
+class {\bfseries Slide}
+\item 
+class {\bfseries Text\+Draw}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classinterpreter_a852bbdf7cbc96482aec4cd95d04afbbd}{setup}} ()
+\item 
+void \mbox{\hyperlink{classinterpreter_a80d0699728237c15828d1799b0c68dd8}{file\+Selected}} (File selection)
+\item 
+void \mbox{\hyperlink{classinterpreter_a0aa50c71168fe21a42b784664dabd81c}{draw}} ()
+\item 
+void \mbox{\hyperlink{classinterpreter_ac3b456fc7976fc0c0ef2c30bc708ece6}{mouse\+Pressed}} ()
+\item 
+void \mbox{\hyperlink{classinterpreter_ab7b1ae10785d01d5711c73753d87e3f1}{read\+X\+ML}} (String path)
+\item 
+String \mbox{\hyperlink{classinterpreter_ab30092d885fa48e80a755fd267373313}{get\+Path}} (String path)
+\item 
+X\+ML \mbox{\hyperlink{classinterpreter_a2f463e00550f990abb9d5f3faf98ee11}{resolve\+Alias}} (String path)
+\item 
+void \mbox{\hyperlink{classinterpreter_a0168f70e785b356c0b8d46df1db481b9}{find\+And\+Replace}} (X\+ML element, X\+ML alias)
+\item 
+void \mbox{\hyperlink{classinterpreter_a0778ae9aabeaceab59c21b3c6dc655fc}{replace}} (X\+ML el, X\+ML alias)
+\item 
+void \mbox{\hyperlink{classinterpreter_ad92b6dcf7cd0b382d7ae4b8effb3d913}{recursive\+Replace}} (X\+ML element, X\+ML element\+To\+Update, X\+ML element\+Syntax, X\+ML alias\+Syntax)
+\item 
+Array\+List$<$ X\+ML $>$ \mbox{\hyperlink{classinterpreter_aa3857639607c7cf4a9bb70632946513b}{get\+Aliases\+Imports}} (X\+ML\mbox{[}$\,$\mbox{]} imports)
+\item 
+void \mbox{\hyperlink{classinterpreter_a6b3f81744e9fa22d90a0dd220f4d6079}{get\+Aliases\+Imports\+Aux}} (X\+ML\mbox{[}$\,$\mbox{]} imports, Array\+List$<$ String $>$ pathes, Array\+List$<$ X\+ML $>$ aliases)
+\item 
+Slide \mbox{\hyperlink{classinterpreter_adcd59be94bad2b00eb4295feda16a30b}{parse\+Slide}} (X\+ML slide\+X\+ML)
+\item 
+Shape \mbox{\hyperlink{classinterpreter_a4c9f0b76f7080f8e7d0ac110bdae59f0}{parse\+Shape}} (X\+ML elem\+X\+ML)
+\item 
+Drawable \mbox{\hyperlink{classinterpreter_a5408086a41a45dd876299019ee846622}{parse\+Elem}} (X\+ML elem\+X\+ML)
+\item 
+void \mbox{\hyperlink{classinterpreter_a680141ba778591553893c7c63cfe61b1}{parse\+Children}} (X\+ML parent\+X\+ML, Drawable parent)
+\item 
+Color \mbox{\hyperlink{classinterpreter_a456210b089c9ae998407e723de58115d}{get\+Color}} (X\+ML elem\+X\+ML)
+\item 
+Attribute\+Float \mbox{\hyperlink{classinterpreter_affcd125aa9428da43535945bea6ab0f2}{get\+Float}} (X\+ML elem\+X\+ML, String name, float def)
+\item 
+Animation \mbox{\hyperlink{classinterpreter_a424c3efe8b3b67aea38109dbdcdc5f69}{get\+Animation}} (X\+ML elem\+X\+ML)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classinterpreter_ac103976abe64e62f814d2df616ee00f4}{main}} (String\mbox{[}$\,$\mbox{]} passed\+Args)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classinterpreter_a0aa50c71168fe21a42b784664dabd81c}\label{classinterpreter_a0aa50c71168fe21a42b784664dabd81c}} 
+\index{interpreter@{interpreter}!draw@{draw}}
+\index{draw@{draw}!interpreter@{interpreter}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void interpreter.\+draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classinterpreter_a80d0699728237c15828d1799b0c68dd8}\label{classinterpreter_a80d0699728237c15828d1799b0c68dd8}} 
+\index{interpreter@{interpreter}!fileSelected@{fileSelected}}
+\index{fileSelected@{fileSelected}!interpreter@{interpreter}}
+\doxysubsubsection{\texorpdfstring{fileSelected()}{fileSelected()}}
+{\footnotesize\ttfamily void interpreter.\+file\+Selected (\begin{DoxyParamCaption}\item[{File}]{selection }\end{DoxyParamCaption})}
+
+Callback of \char`\"{}select\+Input\char`\"{} function. It means that this function is call when the user has selected a file or close de selection window. 
+\begin{DoxyParams}{Parameters}
+{\em selection} & file selected by the user \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classinterpreter_a0168f70e785b356c0b8d46df1db481b9}\label{classinterpreter_a0168f70e785b356c0b8d46df1db481b9}} 
+\index{interpreter@{interpreter}!findAndReplace@{findAndReplace}}
+\index{findAndReplace@{findAndReplace}!interpreter@{interpreter}}
+\doxysubsubsection{\texorpdfstring{findAndReplace()}{findAndReplace()}}
+{\footnotesize\ttfamily void interpreter.\+find\+And\+Replace (\begin{DoxyParamCaption}\item[{X\+ML}]{element,  }\item[{X\+ML}]{alias }\end{DoxyParamCaption})}
+
+Resolve a certain alias in a certain element if the tag match. And in the children of the element. 
+\begin{DoxyParams}{Parameters}
+{\em element} & the element that we want to try to replace by the alias \\
+\hline
+{\em alias} & the alias that we are trying to resolve \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classinterpreter_aa3857639607c7cf4a9bb70632946513b}\label{classinterpreter_aa3857639607c7cf4a9bb70632946513b}} 
+\index{interpreter@{interpreter}!getAliasesImports@{getAliasesImports}}
+\index{getAliasesImports@{getAliasesImports}!interpreter@{interpreter}}
+\doxysubsubsection{\texorpdfstring{getAliasesImports()}{getAliasesImports()}}
+{\footnotesize\ttfamily Array\+List$<$X\+ML$>$ interpreter.\+get\+Aliases\+Imports (\begin{DoxyParamCaption}\item[{X\+ML\mbox{[}$\,$\mbox{]}}]{imports }\end{DoxyParamCaption})}
+
+Return the list of aliases that has been found in the files cited in the import 
+\begin{DoxyParams}{Parameters}
+{\em imports} & list of import tag as defined in the B\+T\+ML langage \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an Array\+List of aliases 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classinterpreter_a6b3f81744e9fa22d90a0dd220f4d6079}\label{classinterpreter_a6b3f81744e9fa22d90a0dd220f4d6079}} 
+\index{interpreter@{interpreter}!getAliasesImportsAux@{getAliasesImportsAux}}
+\index{getAliasesImportsAux@{getAliasesImportsAux}!interpreter@{interpreter}}
+\doxysubsubsection{\texorpdfstring{getAliasesImportsAux()}{getAliasesImportsAux()}}
+{\footnotesize\ttfamily void interpreter.\+get\+Aliases\+Imports\+Aux (\begin{DoxyParamCaption}\item[{X\+ML\mbox{[}$\,$\mbox{]}}]{imports,  }\item[{Array\+List$<$ String $>$}]{pathes,  }\item[{Array\+List$<$ X\+ML $>$}]{aliases }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classinterpreter_a424c3efe8b3b67aea38109dbdcdc5f69}\label{classinterpreter_a424c3efe8b3b67aea38109dbdcdc5f69}} 
+\index{interpreter@{interpreter}!getAnimation@{getAnimation}}
+\index{getAnimation@{getAnimation}!interpreter@{interpreter}}
+\doxysubsubsection{\texorpdfstring{getAnimation()}{getAnimation()}}
+{\footnotesize\ttfamily Animation interpreter.\+get\+Animation (\begin{DoxyParamCaption}\item[{X\+ML}]{elem\+X\+ML }\end{DoxyParamCaption})}
+
+Parse a specific X\+ML element that is formed as a Animation as defined in the B\+T\+ML, and create the Animation object representing it. 
+\begin{DoxyParams}{Parameters}
+{\em elem\+X\+ML} & the X\+ML element with animation as tag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the Animation object representing the X\+ML object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classinterpreter_a456210b089c9ae998407e723de58115d}\label{classinterpreter_a456210b089c9ae998407e723de58115d}} 
+\index{interpreter@{interpreter}!getColor@{getColor}}
+\index{getColor@{getColor}!interpreter@{interpreter}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily Color interpreter.\+get\+Color (\begin{DoxyParamCaption}\item[{X\+ML}]{elem\+X\+ML }\end{DoxyParamCaption})}
+
+Parse a specific X\+ML element that is formed as a color as defined in the B\+T\+ML, and create the Color object representing it. 
+\begin{DoxyParams}{Parameters}
+{\em elem\+X\+ML} & the X\+ML element with color as tag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the Color object representing the X\+ML object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classinterpreter_affcd125aa9428da43535945bea6ab0f2}\label{classinterpreter_affcd125aa9428da43535945bea6ab0f2}} 
+\index{interpreter@{interpreter}!getFloat@{getFloat}}
+\index{getFloat@{getFloat}!interpreter@{interpreter}}
+\doxysubsubsection{\texorpdfstring{getFloat()}{getFloat()}}
+{\footnotesize\ttfamily Attribute\+Float interpreter.\+get\+Float (\begin{DoxyParamCaption}\item[{X\+ML}]{elem\+X\+ML,  }\item[{String}]{name,  }\item[{float}]{def }\end{DoxyParamCaption})}
+
+Return an Attribute\+Float object representing the value of a given attribute name 
+\begin{DoxyParams}{Parameters}
+{\em elem\+X\+ML} & the X\+ML element in which we want to recuperate the float value \\
+\hline
+{\em name} & name of the attribute we want to find \\
+\hline
+{\em def} & default value of the Attribute\+Float object if the attribute had not been found \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the Attribute\+Float object representing the attribute named \char`\"{}name\char`\"{} with its value or with def value if it had not been found 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classinterpreter_ab30092d885fa48e80a755fd267373313}\label{classinterpreter_ab30092d885fa48e80a755fd267373313}} 
+\index{interpreter@{interpreter}!getPath@{getPath}}
+\index{getPath@{getPath}!interpreter@{interpreter}}
+\doxysubsubsection{\texorpdfstring{getPath()}{getPath()}}
+{\footnotesize\ttfamily String interpreter.\+get\+Path (\begin{DoxyParamCaption}\item[{String}]{path }\end{DoxyParamCaption})}
+
+Give the path to an existing file, based on an absolute or a relative one. If no existing file have been found, return the parameter. 
+\begin{DoxyParams}{Parameters}
+{\em path} & an absolute or a relative path of the file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the path to the existing file, if it exists. Otherwise the parameter. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classinterpreter_ac103976abe64e62f814d2df616ee00f4}\label{classinterpreter_ac103976abe64e62f814d2df616ee00f4}} 
+\index{interpreter@{interpreter}!main@{main}}
+\index{main@{main}!interpreter@{interpreter}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily static void interpreter.\+main (\begin{DoxyParamCaption}\item[{String\mbox{[}$\,$\mbox{]}}]{passed\+Args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classinterpreter_ac3b456fc7976fc0c0ef2c30bc708ece6}\label{classinterpreter_ac3b456fc7976fc0c0ef2c30bc708ece6}} 
+\index{interpreter@{interpreter}!mousePressed@{mousePressed}}
+\index{mousePressed@{mousePressed}!interpreter@{interpreter}}
+\doxysubsubsection{\texorpdfstring{mousePressed()}{mousePressed()}}
+{\footnotesize\ttfamily void interpreter.\+mouse\+Pressed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classinterpreter_a680141ba778591553893c7c63cfe61b1}\label{classinterpreter_a680141ba778591553893c7c63cfe61b1}} 
+\index{interpreter@{interpreter}!parseChildren@{parseChildren}}
+\index{parseChildren@{parseChildren}!interpreter@{interpreter}}
+\doxysubsubsection{\texorpdfstring{parseChildren()}{parseChildren()}}
+{\footnotesize\ttfamily void interpreter.\+parse\+Children (\begin{DoxyParamCaption}\item[{X\+ML}]{parent\+X\+ML,  }\item[{Drawable}]{parent }\end{DoxyParamCaption})}
+
+Parse the drawable children elements of a given element and add them directly to the Drawable object representing the given element. 
+\begin{DoxyParams}{Parameters}
+{\em parent\+X\+ML} & X\+ML element of the element that we want to add children \\
+\hline
+{\em parent} & Drawable object of the element that we want to add children \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classinterpreter_a5408086a41a45dd876299019ee846622}\label{classinterpreter_a5408086a41a45dd876299019ee846622}} 
+\index{interpreter@{interpreter}!parseElem@{parseElem}}
+\index{parseElem@{parseElem}!interpreter@{interpreter}}
+\doxysubsubsection{\texorpdfstring{parseElem()}{parseElem()}}
+{\footnotesize\ttfamily Drawable interpreter.\+parse\+Elem (\begin{DoxyParamCaption}\item[{X\+ML}]{elem\+X\+ML }\end{DoxyParamCaption})}
+
+Parse any X\+ML element that is defined in the B\+T\+ML as a drawable one\+: a Shape, a Rectangle or a Text 
+\begin{DoxyParams}{Parameters}
+{\em elem\+X\+ML} & the X\+ML element with one of the third tag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the Drawable object representing the X\+ML object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classinterpreter_a4c9f0b76f7080f8e7d0ac110bdae59f0}\label{classinterpreter_a4c9f0b76f7080f8e7d0ac110bdae59f0}} 
+\index{interpreter@{interpreter}!parseShape@{parseShape}}
+\index{parseShape@{parseShape}!interpreter@{interpreter}}
+\doxysubsubsection{\texorpdfstring{parseShape()}{parseShape()}}
+{\footnotesize\ttfamily Shape interpreter.\+parse\+Shape (\begin{DoxyParamCaption}\item[{X\+ML}]{elem\+X\+ML }\end{DoxyParamCaption})}
+
+Parse a specific X\+ML element that is formed as a shape as defined in the B\+T\+ML, and create the Shape object representing it. 
+\begin{DoxyParams}{Parameters}
+{\em elem\+X\+ML} & the X\+ML element with shape as tag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the Shape object representing the X\+ML object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classinterpreter_adcd59be94bad2b00eb4295feda16a30b}\label{classinterpreter_adcd59be94bad2b00eb4295feda16a30b}} 
+\index{interpreter@{interpreter}!parseSlide@{parseSlide}}
+\index{parseSlide@{parseSlide}!interpreter@{interpreter}}
+\doxysubsubsection{\texorpdfstring{parseSlide()}{parseSlide()}}
+{\footnotesize\ttfamily Slide interpreter.\+parse\+Slide (\begin{DoxyParamCaption}\item[{X\+ML}]{slide\+X\+ML }\end{DoxyParamCaption})}
+
+Parse a specific X\+ML element that is formed as a slide as defined in the B\+T\+ML, and create the Slide object representing it. 
+\begin{DoxyParams}{Parameters}
+{\em slide\+X\+ML} & the X\+ML element with slide as tag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the Slide object representing the X\+ML object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classinterpreter_ab7b1ae10785d01d5711c73753d87e3f1}\label{classinterpreter_ab7b1ae10785d01d5711c73753d87e3f1}} 
+\index{interpreter@{interpreter}!readXML@{readXML}}
+\index{readXML@{readXML}!interpreter@{interpreter}}
+\doxysubsubsection{\texorpdfstring{readXML()}{readXML()}}
+{\footnotesize\ttfamily void interpreter.\+read\+X\+ML (\begin{DoxyParamCaption}\item[{String}]{path }\end{DoxyParamCaption})}
+
+Read the file, then setup the program with the params and finally create add the Slide object in the global variable \char`\"{}slides\char`\"{}. 
+\begin{DoxyParams}{Parameters}
+{\em path} & path of the file containing the code btml \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classinterpreter_ad92b6dcf7cd0b382d7ae4b8effb3d913}\label{classinterpreter_ad92b6dcf7cd0b382d7ae4b8effb3d913}} 
+\index{interpreter@{interpreter}!recursiveReplace@{recursiveReplace}}
+\index{recursiveReplace@{recursiveReplace}!interpreter@{interpreter}}
+\doxysubsubsection{\texorpdfstring{recursiveReplace()}{recursiveReplace()}}
+{\footnotesize\ttfamily void interpreter.\+recursive\+Replace (\begin{DoxyParamCaption}\item[{X\+ML}]{element,  }\item[{X\+ML}]{element\+To\+Update,  }\item[{X\+ML}]{element\+Syntax,  }\item[{X\+ML}]{alias\+Syntax }\end{DoxyParamCaption})}
+
+Auxiliary function doing the actual resolving of the alias in an element 
+\begin{DoxyParams}{Parameters}
+{\em element} & the element of the original X\+ML object, without any alias replacement \\
+\hline
+{\em element\+To\+Update} & the element that has to have his attributes replaced by those of the alias \\
+\hline
+{\em element\+Syntax} & canvas of the element that has to be replaced. It is the first part of an alias in the B\+T\+ML langage \\
+\hline
+{\em alias\+Syntax} & canvas of the element that will replace. It is the seconde part of an alias in the B\+T\+ML langage \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classinterpreter_a0778ae9aabeaceab59c21b3c6dc655fc}\label{classinterpreter_a0778ae9aabeaceab59c21b3c6dc655fc}} 
+\index{interpreter@{interpreter}!replace@{replace}}
+\index{replace@{replace}!interpreter@{interpreter}}
+\doxysubsubsection{\texorpdfstring{replace()}{replace()}}
+{\footnotesize\ttfamily void interpreter.\+replace (\begin{DoxyParamCaption}\item[{X\+ML}]{el,  }\item[{X\+ML}]{alias }\end{DoxyParamCaption})}
+
+Resolve the alias in the element 
+\begin{DoxyParams}{Parameters}
+{\em el} & the element that will be replaced by the alias \\
+\hline
+{\em alias} & the alias that we are trying to resolve \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classinterpreter_a2f463e00550f990abb9d5f3faf98ee11}\label{classinterpreter_a2f463e00550f990abb9d5f3faf98ee11}} 
+\index{interpreter@{interpreter}!resolveAlias@{resolveAlias}}
+\index{resolveAlias@{resolveAlias}!interpreter@{interpreter}}
+\doxysubsubsection{\texorpdfstring{resolveAlias()}{resolveAlias()}}
+{\footnotesize\ttfamily X\+ML interpreter.\+resolve\+Alias (\begin{DoxyParamCaption}\item[{String}]{path }\end{DoxyParamCaption})}
+
+Read an X\+ML file and return its content with its alias references resolved and deleted. And its import tags resolved too. @precondition the file must be a well-\/formed B\+T\+ML one. 
+\begin{DoxyParams}{Parameters}
+{\em path} & path of the X\+ML file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the X\+ML file content with its alias references resolved and deleted 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classinterpreter_a852bbdf7cbc96482aec4cd95d04afbbd}\label{classinterpreter_a852bbdf7cbc96482aec4cd95d04afbbd}} 
+\index{interpreter@{interpreter}!setup@{setup}}
+\index{setup@{setup}!interpreter@{interpreter}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void interpreter.\+setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{interpreter_8java}{interpreter.\+java}}\end{DoxyCompactItemize}

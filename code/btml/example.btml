@@ -1,0 +1,153 @@
+<root>
+	<meta height="720" width="1280" firstSlide="main"/>
+
+	<slide name="main" toRedraw="true">
+		<rectangle path="data/backgroundIndex.jpg" height="720" width="1280" x="0">
+			<rectangle x="100" y="100" width="50" height="50">
+				<color>
+					<red value="50"/>
+					<green value="50"/>
+					<blue value="150"/>
+				</color>
+
+				<height>
+					<animation startValue="50">
+						<keyframe value="50" timing="500"/>
+						<keyframe value="200" timing="1000"/>
+					</animation>
+				</height>
+
+				<rectangle x="10" y="10" width="20" height="20">
+					<redColor/>
+				</rectangle>
+			</rectangle>
+
+			<y>
+				<animation startValue="720">
+					<keyframe value="0" timing="1000"/>
+				</animation>
+			</y>
+		</rectangle>
+
+		<shape x="100" y="100">
+			<x>
+				<animation startValue="100" infinite="true" boomerang="true">
+					<keyframe value="200" timing="1000"/>
+				</animation>
+			</x>
+
+			<vertex x="10" y="10">
+				<y>
+					<animation startValue="20" infinite="true" boomerang="true">
+						<keyframe value="10" timing="1000"/>
+					</animation>
+				</y>
+			</vertex>
+			<vertex x="10" y="100"/>
+			<vertex x="100" y="100"/>
+			<vertex x="100" y="10"/>
+			<redColor/>
+		</shape>
+
+		<shape>
+			<vertex x="30" y="20">
+				<y>
+					<animation startValue="20">
+						<keyframe value="10" timing="1000"/>
+					</animation>
+				</y>
+			</vertex>
+			<bezierVertex x1="80" x2="80" x3="30" y1="0" y2="75" y3="75"/>
+			<bezierVertex x1="50" x2="60" x3="30" y1="80" y2="25" y3="20"/>
+			<redColor/>
+		</shape>
+		
+		<buttonMain destination="red" label="Button to red" y="520" x="0" red="114" green="47" blue="55"/>
+		<buttonMain destination="green" label="Button to green" y="520" x="433" red="47" green="114" blue="55"/>
+		<buttonMain destination="blue" label="Button to blue" y="520" x="866" red="47" green="55" blue="114"/>
+	</slide>
+
+
+	<slide name="red" toRedraw="true" music="data/weirdMusic.mp3">
+		<color>
+			<red value="114"/>
+			<green value="47"/>
+			<blue value="55"/>
+		</color>
+
+		<text text="Red page" police="64" y="50">
+			<x>
+				<animation startValue="50">
+					<keyframe value="150" timing="1500"/>
+				</animation>
+			</x>
+		</text>
+
+		<text text="This page is pretty red." width="380" x="200" y="200" police="16" backgroundColor="255, 255, 255"/>
+		<buttonMain destination="main" label="RETURN" x="1080" height="100" width="220"/>
+	</slide>
+
+
+	<slide name="green" toRedraw="true" duration="1500" nextSlide="green2">
+		<color>
+			<red value="47"/>
+			<green value="114"/>
+			<blue value="55"/>
+		</color>
+
+		<text text="Green page" police="64" y="50">
+			<x>
+				<animation startValue="50">
+					<keyframe value="150" timing="1500"/>
+				</animation>
+			</x>
+		</text>
+
+		<text text="Such a green page" width="380" x="800" y="200" police="16" backgroundColor="255, 255, 255"/>
+		<buttonMain destination="main" label="RETURN" x="1080" height="100" width="220"/>
+	</slide>
+
+	<slide name="green2" toRedraw="true" duration="1500" nextSlide="red">
+		<color>
+			<red value="47"/>
+			<green value="114"/>
+			<blue value="55"/>
+		</color>
+
+		<text text="Going to red page soon" police="64" y="50">
+			<x>
+				<animation startValue="50">
+					<keyframe value="150" timing="1500"/>
+				</animation>
+			</x>
+		</text>
+
+		<text text="Such an intermediate green page" width="380" x="800" y="200" police="16" backgroundColor="255, 255, 255"/>
+		<buttonMain destination="main" label="RETURN" x="1080" height="100" width="220"/>
+	</slide>
+
+
+	<slide name="blue" toRedraw="true" music="data/weirdMusic.mp3" stopSong="false">
+		<color>
+			<red value="47"/>
+			<green value="55"/>
+			<blue value="114"/>
+		</color>
+
+		<text text="Blue page" police="64" y="50">
+			<x>
+				<animation startValue="50">
+					<keyframe value="150" timing="1500"/>
+				</animation>
+			</x>
+		</text>
+
+		<text text="I'm a blue..." width="380" x="800" y="200" police="16" backgroundColor="255, 255, 255"/>
+		<buttonMain destination="main" label="RETURN" x="1080" height="100" width="220"/>
+	</slide>
+
+
+
+	<import path="toimport.btml"/>
+
+</root>

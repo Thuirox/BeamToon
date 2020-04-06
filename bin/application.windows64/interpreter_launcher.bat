@@ -1,0 +1,1 @@
+start /d %~dp0 interpreter.exe %1

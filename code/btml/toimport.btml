@@ -1,0 +1,32 @@
+<root>
+	<alias>
+		<textButton text="DEFAULT LABEL" x="50" y="50" police="32"/>
+		<text text="text" x="x" y="y" police="police"/>
+	</alias>
+
+	<alias>
+		<buttonMain height="200" width="433" x="0" y="0" label="" tx="50" ty="50" police="32" destination="" red="50" green="50" blue="50"/>
+
+		<rectangle height="height" y="y" x="x" width="width">
+			<clickActionGoTo name="destination"/>
+			<text text="label" x="tx" y="ty" police="police"/>
+
+			<color>
+				<red value="red"/>
+				<green value="green"/>
+				<blue value="blue"/>
+			</color>
+		</rectangle>
+	</alias>
+
+	<alias>
+		<redColor red="200" green="50" blue="50"/>
+		
+		<color>
+			<red value="red"/>
+			<green value="green"/>
+			<blue value="blue"/>
+		</color>
+	</alias>
+
+</root>

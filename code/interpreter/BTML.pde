@@ -75,6 +75,7 @@ Drawable parseElem(XML elemXML){
     
     case "text":
     elem = new TextDraw(getFloat(elemXML, "x", 0), getFloat(elemXML, "y", 0), getFloat(elemXML, "w", 0), getFloat(elemXML, "h", 0), elemXML.getInt("police", 16), elemXML.getString("text"));
+    elem.setColor(getColor(elemXML));
     break;
     
     case "shape":

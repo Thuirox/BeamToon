@@ -3,11 +3,8 @@ import processing.data.*;
 import processing.event.*; 
 import processing.opengl.*; 
 
-import gifAnimation.*; 
-import java.awt.image.BufferedImage; 
 import ddf.minim.*; 
 import java.util.Map; 
-import gifAnimation.*; 
 
 import java.util.HashMap; 
 import java.util.ArrayList; 
@@ -19,9 +16,6 @@ import java.io.OutputStream;
 import java.io.IOException; 
 
 public class interpreter extends PApplet {
-
-
-
 
 
 
@@ -62,7 +56,7 @@ public void setup(){
   frameRate(60);
 }
 
-/**
+/*
 Callback of "selectInput" function. It means that this function is call when the user has selected a file or close de selection window.
 @param selection file selected by the user
 */
@@ -102,7 +96,7 @@ public void mousePressed(){
   currentSlide.click(mouseX/scaleX, mouseY/scaleY);
 }
 
-/**
+/*
 Read the file, then setup the program with the params and finally create add the Slide object in the global variable "slides".
 @param path path of the file containing the code btml
 */
@@ -122,7 +116,7 @@ public void readXML(String path){
   }
 }
 
-/**
+/*
 Give the path to an existing file, based on an absolute or a relative one.
 If no existing file have been found, return the parameter.
 @param path an absolute or a relative path of the file.
@@ -136,7 +130,7 @@ public String getPath(String path){
   }
   return path;
 }
-/**
+/*
 Read an XML file and return its content with its alias references resolved and deleted.
 And its import tags resolved too.
 @precondition the file must be a well-formed BTML one.
@@ -169,7 +163,7 @@ public XML resolveAlias(String path){
   return root;
 }
 
-/**
+/*
 Resolve a certain alias in a certain element if the tag match.
 And in the children of the element.
 @param element the element that we want to try to replace by the alias
@@ -190,7 +184,7 @@ public void findAndReplace(XML element, XML alias){
   }
 }
 
-/**
+/*
 Resolve the alias in the element
 @param el the element that will be replaced by the alias
 @param alias the alias that we are trying to resolve
@@ -204,7 +198,7 @@ public void replace(XML el, XML alias){
   recursiveReplace(el, el, elementSyntax, aliasSyntax);
 }
 
-/**
+/*
 Auxiliary function doing the actual resolving of the alias in an element
 @param element the element of the original XML object, without any alias replacement
 @param elementToUpdate the element that has to have his attributes replaced by those of the alias
@@ -226,7 +220,7 @@ public void recursiveReplace(XML element, XML elementToUpdate, XML elementSyntax
   }
 }
 
-/**
+/*
 Return the list of aliases that has been found in the files cited in the import
 @param imports list of import tag as defined in the BTML langage
 @return an ArrayList of aliases
@@ -261,7 +255,7 @@ public void getAliasesImportsAux(XML[] imports, ArrayList<String> pathes, ArrayL
     getAliasesImportsAux(root.getChildren("import"), pathes, aliases);
   }
 }
-/**
+/*
 Abstract class used to implements class that will update a value through time.
 */
 abstract class Animation{
@@ -302,7 +296,7 @@ abstract class Animation{
   public abstract float getStartValue();
 }
 
-/**
+/*
 Implementation of abstract class Animation for a float value.
 Starting at a certain value and reaching the other linearly after a certain amount of time.
 */
@@ -368,7 +362,7 @@ class AnimationFloat extends Animation{
   }
 }
 
-/**
+/*
 Implementation of abstract class Animation for a float value.
 Animation is following a list of values and durations.
 Starting at the start value, then going to the second value in a certain amount of time being the first duration.
@@ -397,7 +391,7 @@ class AnimationListFloat extends Animation{
     this.setAnimations();
   }
   
-  /**
+  /*
   Create the animations ArrayList<AnimationFloat> from the parameters given in the constructor
   @precondition values.size = durations.size + 1
   */
@@ -416,7 +410,7 @@ class AnimationListFloat extends Animation{
     this.nextAnimation();
   }
   
-  /**
+  /*
   Setup the next animation
   */
   private void nextAnimation(){
@@ -469,21 +463,21 @@ class AnimationListFloat extends Animation{
     return animations.get(0).getStartValue();
   }
 }
-/**
+/*
 Abstract class used to implements class that hold a value and can modify it with an Animation object.
 */
 abstract class Attribute{
   public abstract void startAnimation();
 }
 
-/**
+/*
 Implementation of Attribute abstract class for a float value
 */
 class AttributeFloat extends Attribute{
   private float value;
   private Animation animation;
   
-  /**
+  /*
   @param value initial value
   @param animation object that will be used to update the value through time
   */
@@ -492,14 +486,14 @@ class AttributeFloat extends Attribute{
     this.animation = animation;
   }
   
-  /**
+  /*
   @param value initial value
   */
   AttributeFloat(float value){
     this.value = value;
   }
   
-  /**
+  /*
   The value will be initialised as the start value of the animation
   @param animation object that will be used to update the value through time
   */
@@ -534,7 +528,7 @@ class AttributeFloat extends Attribute{
     this.value = value;
   }
   
-  /**
+  /*
   @return true if this object has an animation, otherwise false
   */
   public boolean hasAnimation(){
@@ -542,7 +536,7 @@ class AttributeFloat extends Attribute{
   }
   
 }
-/**
+/*
 Parse a specific XML element that is formed as a slide as defined in the BTML, and create the Slide object representing it.
 @param slideXML the XML element with slide as tag
 @return the Slide object representing the XML object
@@ -553,7 +547,7 @@ public Slide parseSlide(XML slideXML){
   return slide;
 }
 
-/**
+/*
 Parse a specific XML element that is formed as a shape as defined in the BTML, and create the Shape object representing it.
 @param elemXML the XML element with shape as tag
 @return the Shape object representing the XML object
@@ -603,7 +597,7 @@ public Shape parseShape(XML elemXML){
   return new Shape(getFloat(elemXML, "x", 0), getFloat(elemXML, "y", 0), getFloat(elemXML, "width", 0), getFloat(elemXML, "height", 0), PApplet.parseBoolean(elemXML.getString("toRedraw", "true")), points, s);
 }
 
-/**
+/*
 Parse any XML element that is defined in the BTML as a drawable one: a Shape, a Rectangle or a Text
 @param elemXML the XML element with one of the third tag
 @return the Drawable object representing the XML object
@@ -619,6 +613,7 @@ public Drawable parseElem(XML elemXML){
     
     case "text":
     elem = new TextDraw(getFloat(elemXML, "x", 0), getFloat(elemXML, "y", 0), getFloat(elemXML, "w", 0), getFloat(elemXML, "h", 0), elemXML.getInt("police", 16), elemXML.getString("text"));
+    elem.setColor(getColor(elemXML));
     break;
     
     case "shape":
@@ -638,7 +633,7 @@ public Drawable parseElem(XML elemXML){
   return elem;
 }
 
-/**
+/*
 Parse the drawable children elements of a given element and add them directly to the Drawable object representing the given element.
 @param parentXML XML element of the element that we want to add children
 @param parent Drawable object of the element that we want to add children
@@ -652,7 +647,7 @@ public void parseChildren(XML parentXML, Drawable parent){
   }
 }
 
-/**
+/*
 Parse a specific XML element that is formed as a color as defined in the BTML, and create the Color object representing it.
 @param elemXML the XML element with color as tag
 @return the Color object representing the XML object
@@ -666,7 +661,7 @@ public Color getColor(XML elemXML){
   }
 }
 
-/**
+/*
 Return an AttributeFloat object representing the value of a given attribute name
 @param elemXML the XML element in which we want to recuperate the float value
 @param name name of the attribute we want to find
@@ -691,7 +686,7 @@ public AttributeFloat getFloat(XML elemXML, String name, float def){
   }
 }
 
-/**
+/*
 Parse a specific XML element that is formed as a Animation as defined in the BTML, and create the Animation object representing it.
 @param elemXML the XML element with animation as tag
 @return the Animation object representing the XML object
@@ -720,7 +715,7 @@ public Animation getAnimation(XML elemXML){
   }
   return animation;
 }
-/**
+/*
 Abstract class used to implement class that will hold a function to be executed.
 Those classes are meant to be linked to a Drawable object. And therefore represent the action that is triggered when the visual object is clicked on.
 Furthermore due to the fact that multiple Drawable can be stacked, each ClickAction determine if those of the others object has to be triggered to or not.
@@ -736,7 +731,7 @@ abstract class ClickAction {
     canClickThrough = cct;
   }
   
-  /**
+  /*
   Execute the action implemented in sub-classes.
   */
   abstract public void act();
@@ -746,7 +741,7 @@ abstract class ClickAction {
   }
 }
 
-/**
+/*
 This class is used to swap the current slide with another one.
 */
 class GoTo extends ClickAction{
@@ -765,7 +760,7 @@ class GoTo extends ClickAction{
     newSlideName = this.name;
   }
 }
-/**
+/*
 Implementation of Attribute abstract class for a color value.
 */
 class Color extends Attribute{
@@ -795,7 +790,7 @@ class Color extends Attribute{
     return color(red.getValue(), green.getValue(), blue.getValue());
   }
 }
-/**
+/*
 Abstract class used to implement any element that has to be display during a BeamToon project.
 */
 abstract class Drawable{
@@ -871,17 +866,17 @@ abstract class Drawable{
     popMatrix();
   }
   
-  /**
+  /*
   Function overrided by child to implement how they will be displayed
   */
   public abstract void overridableDraw();
   
-  /**
+  /* 
   Function used to implement things to do before the element is displayed
   */
   public void update(){}
   
-  /**
+  /*
   Function called when the element has been clicked
   */
   public boolean onClick(){
@@ -893,7 +888,7 @@ abstract class Drawable{
     return !clickThrough;
   }
   
-  /**
+  /*
   Return if a coordinate is inside the element. Considering the hit box of the element as a rectangle starting from its bottom left corner.
   @param x x-coordinate
   @param y y-coordinate
@@ -917,7 +912,7 @@ abstract class Drawable{
     }
   }
   
-  /**
+  /*
   Function initializing the element when it has to be displayed
   */
   public void start(){
@@ -945,7 +940,7 @@ abstract class Drawable{
     this.clickAction = ca;
   }
   
-  /**
+  /*
   Add a new child element to this
   @param child the element that has to become a new child of this
   */
@@ -954,7 +949,7 @@ abstract class Drawable{
     children.add(child);
   }
   
-  /**
+  /*
   Return if the click event has been consumed or not. And therefore it tells if other drawable element can be considered as clicked on or not.
   @param x x-coordinate
   @param y y-coordinate
@@ -978,7 +973,7 @@ abstract class Drawable{
     return val;
   }
 }
-/**
+/*
 The instances of this class represent a point of a Shape element.
 */
 class Point{
@@ -1013,7 +1008,7 @@ class Point{
     return x.hasAnimation() || y.hasAnimation();
   }
 }
-/**
+/*
 An instance of this class represent a rectangle.
 That can be an image sized by the rectangle.
 */
@@ -1040,7 +1035,7 @@ class Rectangle extends Drawable{
     }
   }
 }
-/**
+/*
 An instance of this class represent any kind of shape.
 */
 class Shape extends Drawable{
@@ -1077,7 +1072,7 @@ class Shape extends Drawable{
     shape(shape, -rotationX.getValue(), -rotationY.getValue());
   }
 }
-/**
+/*
 An instance of this class represent a slide.
 Those compose a BeamToon project and are composed by other elements that inherite from the Drawable class.
 */
@@ -1119,7 +1114,7 @@ class Slide extends Rectangle{
     text(this.name, floatWidth/2, floatHeight/2);
   }
   
-  /**
+  /*
   This function prepare the slide to display it.
   */
   public void start(){
@@ -1132,7 +1127,7 @@ class Slide extends Rectangle{
     }
   }
   
-  /**
+  /*
   This function stop what is supposed to be when we don't want to display the slide anymore
   */
   public void stop(){
@@ -1146,7 +1141,7 @@ class Slide extends Rectangle{
     return this.name;
   }
 }
-/**
+/*
 An instance of this class is a text that can be visually represented.
 */
 class TextDraw extends Drawable{

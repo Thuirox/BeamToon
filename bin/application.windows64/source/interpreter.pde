@@ -1,8 +1,5 @@
-import gifAnimation.*;
-import java.awt.image.BufferedImage;
 import ddf.minim.*;
 import java.util.Map;
-import gifAnimation.*;
 Minim minim;
 AudioPlayer song;
 
